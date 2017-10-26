@@ -60,7 +60,7 @@ class HomeScreen extends React.Component {
 }
 
 export const HawkerApp = StackNavigator({
-    Home: { screen: HomeScreen },
+    Home: { screen: Instructions },
     //login + signup process
     Login: { screen: Login },
     CreateAccount: { screen: CreateAccount },

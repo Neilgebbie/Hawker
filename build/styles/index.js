@@ -2,6 +2,8 @@ import { StyleSheet } from 'react-native'
 import Dimensions from 'Dimensions'
 
 const winWidth = Dimensions.get('window').width
+const ninefiveW = winWidth * 0.95
+const nineW = winWidth * 0.9
 const eightW = winWidth * .8
 const sixW = winWidth * .6
 const fourW = winWidth * .4
@@ -48,11 +50,21 @@ export default StyleSheet.create({
         overflow: 'hidden'
     },
     textInput: {
-        width: eightW,
-        height: 70, 
-        borderColor: 'gray', 
-        marginBottom: oneH,
-        borderWidth: 1
+        width: nineW,
+        height: 50, 
+        fontSize: 15,
+        borderColor: '#fff', 
+        color: '#fff',
+        marginBottom: 25,
+        borderWidth: 1,
+        paddingLeft: 10,
+        paddingRight: 10
+    },
+    textLabel: {
+        paddingLeft: 10,
+        marginBottom:10,
+        color: '#fff',
+        fontSize:15
     },
     main: {
         position: 'relative'
