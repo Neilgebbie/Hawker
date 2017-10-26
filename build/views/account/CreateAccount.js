@@ -3,7 +3,7 @@ import React from 'react';
 import { ScrollView, Text, TextInput, Button } from 'react-native';
 
 //global stylesheet
-import styles from '../styles/index.js'
+import styles from '../../styles/index.js'
 
 export class CreateAccount extends React.Component {
     static navigationOptions = {

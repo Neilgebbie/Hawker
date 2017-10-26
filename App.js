@@ -1,19 +1,29 @@
 //dependencies
-import React from 'react';
-import { Button, View, Image, Text } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import React from 'react'
+import { Button, View, Image, Text, Linking } from 'react-native'
+import { StackNavigator } from 'react-navigation'
 
 //Login + CreateAccount
-import { Login } from './build/views/login.js';
-import { CreateAccount } from './build/views/CreateAccount.js';
-import { Instructions } from './build/views/Instructions.js';
+import { Login } from './build/views/account/login.js'
+import { CreateAccount } from './build/views/account/CreateAccount.js'
+import { Instructions } from './build/views/static/Instructions.js'
 
 //main app screens
-import { Main } from './build/views/Main.js';
+import { Main } from './build/views/Main.js'
+import { Photo } from './build/views/Photo.js'
+import { Search } from './build/views/Search.js'
+import { Friends } from './build/views/Friends.js'
+import { Profile } from './build/views/Profile.js'
 
 
 //global stylesheet
 import styles from './build/styles/index.js'
+
+/*
+TO DO:
+Convert to splash screen?
+Add logo to main toolbar
+*/
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -35,7 +45,10 @@ class HomeScreen extends React.Component {
           color="#e15d64"
           style={styles.theButton}
           accessibilityLabel="Learn more about this purple button"
-        />      
+        />
+        <Text style={{color: 'blue'}}
+          onPress={() => Linking.openURL('http://neilgebbie.com')}>App by Neil
+        </Text>      
       </View>
     );  
   }
@@ -48,7 +61,11 @@ export const HawkerApp = StackNavigator({
   CreateAccount: { screen: CreateAccount },
   Instructions: {screen: Instructions },
   //operational screens
-  Main: {screen: Main}
+  Main: {screen: Main},
+  Photo: {screen: Photo},
+  Search: {screen: Search},
+  Friends: {screen: Friends},
+  Profile: {screen: Profile}
 });
 
 export default class App extends React.Component {

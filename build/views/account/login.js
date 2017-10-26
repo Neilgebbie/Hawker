@@ -3,7 +3,7 @@ import React from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 
 //global stylesheet
-import styles from '../styles/index.js'
+import styles from '../../styles/index.js'
 
 export class Login extends React.Component {
     // Nav options can be defined as a function of the screen's props:

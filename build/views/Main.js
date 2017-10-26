@@ -1,6 +1,6 @@
 //dependencies
-import React from 'react';
-import { View, Button, Text } from 'react-native';
+import React from 'react'
+import { View, Button, Text } from 'react-native'
 
 //global stylesheet
 import styles from '../styles/index.js'
@@ -8,38 +8,81 @@ import styles from '../styles/index.js'
 //the main map
 import MapView from 'react-native-maps';
 
+/*
+            {markers.map(marker => (
+                <MapView.Marker
+                    key={marker.id}
+                    coordinate={{
+                        latitude: marker.coordinate.latitude,
+                        longitude: marker.coordinate.longitude
+                    }}
+                />
+            ))}
+*/
 export class Main extends React.Component {
     // Nav options can be defined as a function of the screen's props:
     static navigationOptions = {
         title: "Main"
     };
     render() {
-        const { navigate } = this.props.navigation;
+        const { navigate } = this.props.navigation
+        const LATITUDE = 51.5465329
+        const LONGITUDE = -0.076268
+        const markers = [{
+            id: 0,
+            amount: 99,
+            coordinate: {
+                latitude: LATITUDE,
+                longitude: LONGITUDE
+            },
+        },{
+            id: 1,
+            amount: 199,
+            coordinate: {
+                latitude: LATITUDE + 1,
+                longitude: LONGITUDE - 1
+            },
+        },{
+            id: 2,
+            amount: 285,
+            coordinate: {
+                latitude: LATITUDE - 1,
+                longitude: LONGITUDE - 1
+            },
+        }];
         return (
         <View style={styles.main}>        
-            <Text>Main</Text>   
             <MapView
-            initialRegion={{
-                latitude: 37.78825,
-                longitude: -122.4324,
-                latitudeDelta: 0.0922,
-                longitudeDelta: 0.0421,
-            }}
-        />
-            <div style={styles.bottomNav}>
+                style={styles.theMap}
+                //showsUserLocation={true}
+                //showsMyLocationButton={true}                
+                initialRegion={{
+                    latitude: 51.5465329,
+                    longitude: -0.076268,
+                    latitudeDelta: 0.0922,
+                    longitudeDelta: 0.0421,
+                }}
+            />      
+            <MapView.Marker
+                coordinate={{
+                    latitude: 51.5465329,
+                    longitude: -0.076268
+                }}
+            />
+            <View style={styles.bottomNav}>
                 <Button
-                    onPress={() => navigate('TakePhoto')}
+                    onPress={() => navigate('Photo')}
                     title="Take Photo"
                     color="#e15d64"
                     style={styles.bottom}
                     accessibilityLabel="Take Photo"
                 /> 
                 <Button
-                    onPress={() => navigate('Find')}
-                    title="Find"
+                    onPress={() => navigate('Search')}
+                    title="Search"
                     color="#e15d64"
                     style={styles.bottom}
-                    accessibilityLabel="Find"
+                    accessibilityLabel="Search"
                 /> 
                 <Button
                     onPress={() => navigate('Friends')}
@@ -49,13 +92,13 @@ export class Main extends React.Component {
                     accessibilityLabel="Friends"
                 /> 
                 <Button
-                    onPress={() => navigate('Me')}
+                    onPress={() => navigate('Profile')}
                     title="Me"
                     color="#e15d64"
                     style={styles.bottom}
                     accessibilityLabel="Me"
                 /> 
-            </div>
+            </View>            
         </View>
         );
     }

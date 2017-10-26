@@ -15,6 +15,8 @@ const fourH = winHeight * .4
 const twoH = winHeight * .2
 const oneH = winHeight * .1
 
+// ...styles.contentContainer, ...styles.friendContainer
+
 export default StyleSheet.create({
     container: {
         flex: 1,
@@ -26,8 +28,17 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+    friendContainer: {
+        flex: 1, 
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+    },
     logo: {
         width: eightW
+    },
+    friends:{
+        width: twofiveW,
+        height: twofiveW
     },
     theButton: {
         borderRadius:10,
@@ -43,16 +54,29 @@ export default StyleSheet.create({
         marginBottom: oneH,
         borderWidth: 1
     },
+    main: {
+        position: 'relative'
+    },
     bottomNav: {
         position: 'absolute',
         bottom: 0,
         left: 0,
-        width: winWidth
+        width: winWidth,
+        display: 'flex',
+        flexDirection: 'row'
     },
     bottom: {
-        width: twofiveW,
+        flex: 0.25,
         height:50,
-        backgroundColor: '#999',
-        float: 'left'
+        backgroundColor: '#999'
+    },
+    theMap: {
+        width: winWidth,
+        height: (winHeight - 65)
+    },
+    mapmarker: {
+        height: 100,
+        width: 100,
+        backgroundColor: 'green'
     }
 });
