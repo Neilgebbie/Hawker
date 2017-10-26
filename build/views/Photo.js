@@ -1,13 +1,21 @@
 //dependencies
-import React from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import React from 'react'
+import { View, Text, TextInput, Button } from 'react-native'
 //import Camera from 'react-native-camera';
 
 //global stylesheet
 import styles from '../styles/index.js'
 
+    /*
+    TO DO:
+        OVERLAY - WITH SLIDER
+        CUSTOM PHOTO BUTTON
+        ETCH PHOTO
+        ETCH PREVIOUS PHOTO
+        DISCARD OR SAVE PHOTO
+    */
+
 export class Photo extends React.Component {
-    // Nav options can be defined as a function of the screen's props:
     static navigationOptions = {
         title: "Take Photo"
     };

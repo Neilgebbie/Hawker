@@ -1,9 +1,18 @@
 //dependencies
-import React from 'react';
-import { ScrollView, Text, TextInput, Button } from 'react-native';
+import React from 'react'
+import { ScrollView, Text, TextInput, Button } from 'react-native'
 
 //global stylesheet
 import styles from '../../styles/index.js'
+
+    /*
+    TO DO:
+        THINK ABOUT THE DATA FIELDS FOR SIGN UP
+        STYLE
+        MAILING LIST BUTTON
+        SOCIAL LOGIN FEATURE?
+        ANONYMOUS READ ONLY LOGIN?
+    */
 
 export class CreateAccount extends React.Component {
     static navigationOptions = {

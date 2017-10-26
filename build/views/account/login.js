@@ -1,19 +1,31 @@
 //dependencies
 import React from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
 //global stylesheet
 import styles from '../../styles/index.js'
 
+    /*
+    TO DO:
+        STYLE
+        FORGOT PASSWORD button/form
+        CREATE ACCOUNT BUTTON
+    */
+
 export class Login extends React.Component {
-    // Nav options can be defined as a function of the screen's props:
     static navigationOptions = {
-      title: "Login"
+      title: "Login",
+      header: null      
     };
     render() {
       const { navigate } = this.props.navigation;
+      const loginStyles =  StyleSheet.create({
+        blue: {
+          backgroundColor: '#124567'
+        }
+      })
       return (
-        <View style={styles.container}>        
+        <View style={loginStyles.blue}>        
           <Text>Username</Text>
             <TextInput style={styles.textInput}/>
           <Text>Password</Text>

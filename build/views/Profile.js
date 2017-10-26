@@ -1,12 +1,19 @@
 //dependencies
 import React from 'react'
-import { ScrollView, Text, TextInput, Button } from 'react-native';
+import { ScrollView, Text } from 'react-native'
 
 //global stylesheet
 import styles from '../styles/index.js'
 
+    /*
+    TO DO:
+        PROFILE INFORMATION LIST
+        ABILITY TO CHANGE INFORMATION HERE
+        DELETE ACCOUNT FEATURE
+        DIGITAL SIGN THE REQUEST?
+    */
+
 export class Profile extends React.Component {
-    //create a tiled lists of friends
 
     static navigationOptions = {
         title: "Profile"

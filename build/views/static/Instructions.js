@@ -5,8 +5,14 @@ import { View, Button, Text } from 'react-native';
 //global stylesheet
 import styles from '../../styles/index.js'
 
+    /*
+    TO DO:
+        STYLE
+        WRITE SOME MEANINGFUL TEXT
+        CUSTOM FONTS?
+    */
+
 export class Instructions extends React.Component {
-    // Nav options can be defined as a function of the screen's props:
     static navigationOptions = {
         title: "Instructions"
     };

@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
-import Dimensions from 'Dimensions';
+import { StyleSheet } from 'react-native'
+import Dimensions from 'Dimensions'
 
 const winWidth = Dimensions.get('window').width
 const eightW = winWidth * .8
@@ -24,6 +24,9 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center'
     },
+    homeFade: {
+        backgroundColor: '#e15d64',
+    },
     scrollContainer: {
         alignItems: 'center',
         justifyContent: 'center'
@@ -32,9 +35,6 @@ export default StyleSheet.create({
         flex: 1, 
         flexDirection: 'row',
         flexWrap: 'wrap'
-    },
-    logo: {
-        width: eightW
     },
     friends:{
         width: twofiveW,
@@ -78,5 +78,8 @@ export default StyleSheet.create({
         height: 100,
         width: 100,
         backgroundColor: 'green'
+    },
+    credit: {
+        translateY: - winHeight
     }
 });

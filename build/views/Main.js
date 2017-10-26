@@ -8,6 +8,16 @@ import styles from '../styles/index.js'
 //the main map
 import MapView from 'react-native-maps';
 
+    /*
+    TO DO:
+        REPLACE BUTTONS WITH ICONS
+        MAKE THE PHOTO BUTTON BIGGER?
+        PLOT LOCAL LAPSES ON MAP
+        MAP MARKER STYLING?
+        INITIAL LOCATION BASED ON ACCESS
+        GET DATA FROM API
+    */
+
 /*
             {markers.map(marker => (
                 <MapView.Marker
@@ -20,7 +30,6 @@ import MapView from 'react-native-maps';
             ))}
 */
 export class Main extends React.Component {
-    // Nav options can be defined as a function of the screen's props:
     static navigationOptions = {
         title: "Main"
     };
@@ -54,8 +63,8 @@ export class Main extends React.Component {
         <View style={styles.main}>        
             <MapView
                 style={styles.theMap}
-                //showsUserLocation={true}
-                //showsMyLocationButton={true}                
+                showsUserLocation={true}
+                showsMyLocationButton={true}                
                 initialRegion={{
                     latitude: 51.5465329,
                     longitude: -0.076268,

@@ -1,12 +1,17 @@
 //dependencies
-import React from 'react';
-import { View, Text, TextInput, Button } from 'react-native';
+import React from 'react'
+import { View, Text, TextInput, Button } from 'react-native'
 
 //global stylesheet
 import styles from '../styles/index.js'
 
+    /*
+    TO DO:
+        SEARCH FEATURE USING FORM AND MULTIPLE MAP VIEW INFORMATION
+        THINK ABOUT FIELDS THAT WILL DISPLAY
+    */
+
 export class Search extends React.Component {
-    // Nav options can be defined as a function of the screen's props:
     static navigationOptions = {
         title: "Search"
     };

@@ -1,6 +1,6 @@
 //dependencies
 import React from 'react'
-import { Button, View, Image, Text, Linking } from 'react-native'
+import { Button, View, Image, Text, Linking, Animated, Easing } from 'react-native'
 import { StackNavigator } from 'react-navigation'
 
 //Login + CreateAccount
@@ -21,52 +21,60 @@ import styles from './build/styles/index.js'
 
 /*
 TO DO:
-Convert to splash screen?
-Add logo to main toolbar
+
+Animate button
+
 */
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: "Welcome"
+    title: "Welcome",
+    header: null
   };
+  
   render() {
-    const { navigate } = this.props.navigation;    
+    const { navigate } = this.props.navigation  
     return (
-      <View style={styles.container}>
-      <Text>Welcome to...</Text>
-        <Image
-          style={styles.logo}
-          resizeMode={Image.resizeMode.contain}
-          source={require('./build/img/hawker-logo.png')} 
-        />
-        <Button
-          onPress={() => navigate('Login')}
-          title="Get Started..."
-          color="#e15d64"
-          style={styles.theButton}
-          accessibilityLabel="Learn more about this purple button"
-        />
-        <Text style={{color: 'blue'}}
-          onPress={() => Linking.openURL('http://neilgebbie.com')}>App by Neil
-        </Text>      
-      </View>
+      <Animated.View style={styles.container}>
+        <View style={styles.container}> 
+          <Image
+            resizeMode={Image.resizeMode.center}
+            source={require('./build/img/hawker-logo.png')} 
+          />
+          <Button
+            onPress={() => navigate('Login')}
+            title="Get Started..."
+            color="#e15d64"
+            style={styles.theButton}
+            accessibilityLabel="Click to Login"
+          />
+        </View>
+        <View style={{flex: .1}}>         
+          <Text style={{color: '#e15d64'}}
+            onPress={() => Linking.openURL('http://neilgebbie.com')}>APP BY NEIL
+          </Text>    
+        </View>  
+      </Animated.View>
     );  
   }
 }
 
 export const HawkerApp = StackNavigator({
-  Home: { screen: HomeScreen },
-  //login + signup process
-  Login: { screen: Login },
-  CreateAccount: { screen: CreateAccount },
-  Instructions: {screen: Instructions },
-  //operational screens
-  Main: {screen: Main},
-  Photo: {screen: Photo},
-  Search: {screen: Search},
-  Friends: {screen: Friends},
-  Profile: {screen: Profile}
-});
+    Home: { screen: HomeScreen },
+    //login + signup process
+    Login: { screen: Login },
+    CreateAccount: { screen: CreateAccount },
+    Instructions: {screen: Instructions },
+    //operational screens
+    Main: {screen: Main},
+    Photo: {screen: Photo},
+    Search: {screen: Search},
+    Friends: {screen: Friends},
+    Profile: {screen: Profile}
+  },{ 
+    headerMode: 'screen' 
+  }
+);
 
 export default class App extends React.Component {
   render() {
